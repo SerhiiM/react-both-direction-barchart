@@ -1,0 +1,37 @@
+{
+  "name": "react-both-direction-barchart",
+  "version": "0.0.1",
+  "description": "This is a simple both direction barchar without anything exept bars.",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "keywords": [
+    "react",
+    "barchart",
+    "chart"
+  ],
+  "license": "MIT",
+  "source": "src/Chart/index.js",
+  "main": "dist/main.js",
+  "maintainers": [
+    {
+      "name": "serhiimisnyk",
+      "email": "misnyk.sergei93@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github.com/SerhiiM/react-both-direction-barchart"
+  },
+  "homepage": "github.com/SerhiiM/react-both-direction-barchart",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "dependencies": {
+    "parcel": "^2.7.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
