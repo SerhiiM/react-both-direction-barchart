@@ -1,4 +1,5 @@
 var $9AoES$react = require("react");
+var $9AoES$styledcomponents = require("styled-components");
 
 function $parcel$defineInteropFlag(a) {
   Object.defineProperty(a, '__esModule', {value: true, configurable: true});
@@ -14,31 +15,32 @@ $parcel$defineInteropFlag(module.exports);
 
 $parcel$export(module.exports, "default", () => $2714d5d70fce1f6a$export$2e2bcd8739ae039);
 
-const $c13f7b71ebe2660f$export$21b431f49f69b249 = styled.div`
+
+const $c13f7b71ebe2660f$export$6a70c6a55be0a956 = (0, ($parcel$interopDefault($9AoES$styledcomponents))).div`
+  width: ${({ width: width  })=>`${width}px`};
+`;
+const $c13f7b71ebe2660f$export$21b431f49f69b249 = (0, ($parcel$interopDefault($9AoES$styledcomponents))).div`
   background: ${({ primaryColor: primaryColor  })=>primaryColor};
   border: solid 1px ${({ secondaryColor: secondaryColor  })=>secondaryColor};
   height: ${({ height: height , isStrictSize: isStrictSize  })=>`${height}${isStrictSize ? "px" : "%"}`};
-  width: 24px;
-  margin: 0 5px;
+  width: ${({ width: width  })=>`${width}px`};
+  margin-right: ${({ spaceBetween: spaceBetween  })=>`${spaceBetween}px`};
   border-radius: ${({ isPositive: isPositive  })=>isPositive ? "4px 4px 0 0" : "0 0 4px 4px"};
-  &:first-child {
-    margin-left: 0px;
-  }
   &:last-child {
     margin-right: 0px;
   }
 `;
-const $c13f7b71ebe2660f$export$85baac63c0f23731 = styled.div`
+const $c13f7b71ebe2660f$export$85baac63c0f23731 = (0, ($parcel$interopDefault($9AoES$styledcomponents))).div`
   height: ${({ isDiffDirection: isDiffDirection , height: height  })=>isDiffDirection ? "max-content" : height + "px"};
   display: flex;
   align-items: ${({ isPositive: isPositive  })=>isPositive ? "flex-end" : "flex-start"};
 `;
-const $c13f7b71ebe2660f$export$119cafd3a25d40c5 = styled.div`
+const $c13f7b71ebe2660f$export$119cafd3a25d40c5 = (0, ($parcel$interopDefault($9AoES$styledcomponents))).div`
   background: #607EAA;
   width: 100%;
   height: 1px;
 `;
-const $c13f7b71ebe2660f$export$d5f17049d0c70a76 = styled.div`
+const $c13f7b71ebe2660f$export$d5f17049d0c70a76 = (0, ($parcel$interopDefault($9AoES$styledcomponents))).div`
   height: max-content;
 `;
 
@@ -64,23 +66,29 @@ const $c13f7b71ebe2660f$export$d5f17049d0c70a76 = styled.div`
     if (isDiffDirection) data.forEach((item)=>{
         if ((isPositiveBarLonger ? item.value < 0 : item.value > 0) && biggestDiffValue < Math.abs(item.value)) biggestDiffValue = Number(Math.abs(item.value.toFixed(2)));
     });
-    return /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement("div", null, isAllPositive && /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement("div", null, /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$85baac63c0f23731), {
+    return /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$6a70c6a55be0a956), {
+        width: data.length * barWidth + (data.length - 1) * spaceBetweenWidth
+    }, isAllPositive && /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement("div", null, /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$85baac63c0f23731), {
         isPositive: true,
         height: barchartHeight
-    }, data.map((item)=>{
+    }, data.map((item, index)=>{
         return /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$21b431f49f69b249), {
-            key: item.key,
+            key: index,
             height: Math.round(item.value / maxValue * 100),
+            width: barWidth,
+            spaceBetween: spaceBetweenWidth,
             primaryColor: item.primaryColor,
             secondaryColor: item.secondaryColor,
             isPositive: true
         });
     })), /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$119cafd3a25d40c5), null)), isAllNegative && /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement("div", null, /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$119cafd3a25d40c5), null), /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$85baac63c0f23731), {
         height: barchartHeight
-    }, data.map((item)=>{
+    }, data.map((item, index)=>{
         return /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$21b431f49f69b249), {
-            key: item.key,
+            key: index,
             height: Math.abs(Math.round(item.value / maxValue * 100)),
+            width: barWidth,
+            spaceBetween: spaceBetweenWidth,
             primaryColor: item.primaryColor,
             secondaryColor: item.secondaryColor,
             isPositive: false
@@ -90,10 +98,12 @@ const $c13f7b71ebe2660f$export$d5f17049d0c70a76 = styled.div`
     }, /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$85baac63c0f23731), {
         isPositive: true,
         isDiffDirection: true
-    }, data.map((item)=>{
+    }, data.map((item, index)=>{
         return /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$21b431f49f69b249), {
-            key: item.key,
+            key: index,
             height: item.value > 0 ? item.value / (maxValue + biggestDiffValue) * barchartHeight : 0,
+            width: barWidth,
+            spaceBetween: spaceBetweenWidth,
             isStrictSize: true,
             primaryColor: item.value > 0 ? item.primaryColor : "transparent",
             secondaryColor: item.value > 0 ? item.secondaryColor : "transparent",
@@ -101,10 +111,12 @@ const $c13f7b71ebe2660f$export$d5f17049d0c70a76 = styled.div`
         });
     })), /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$119cafd3a25d40c5), null), /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$85baac63c0f23731), {
         isDiffDirection: true
-    }, data.map((item)=>{
+    }, data.map((item, index)=>{
         return /*#__PURE__*/ (0, ($parcel$interopDefault($9AoES$react))).createElement((0, $c13f7b71ebe2660f$export$21b431f49f69b249), {
-            key: item.key,
+            key: index,
             height: item.value < 0 ? Math.abs(item.value / (maxValue + biggestDiffValue) * barchartHeight) : 0,
+            width: barWidth,
+            spaceBetween: spaceBetweenWidth,
             isStrictSize: true,
             primaryColor: item.value < 0 ? item.primaryColor : "transparent",
             secondaryColor: item.value < 0 ? item.secondaryColor : "transparent",
