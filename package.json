@@ -1,6 +1,6 @@
 {
   "name": "react-both-direction-barchart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a simple both direction barchar without anything exept bars.",
   "scripts": {
     "watch": "parcel watch",
@@ -12,7 +12,7 @@
     "chart"
   ],
   "license": "MIT",
-  "source": "src/Chart/index.js",
+  "source": "src/BothDirectionBarChart/index.js",
   "main": "dist/main.js",
   "maintainers": [
     {
